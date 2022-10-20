@@ -1,14 +1,28 @@
 package com.bridgelabz.day7.UC_Gambling_Simulator;
 
+import java.util.*;
 public class Gambling_Simulator {
 	public static final  int initialStake = 100;
     public static final int stakeBet = 1;
+    static Random random = new Random(); 
 
-	public static void main(String[] args) {
-		System.out.println("Welcome to Gambling Game Simulator program");
-        System.out.println("Initial Stake is " +initialStake +"$");
-        System.out.println("Stake Bet is " +stakeBet+"$");
-
-	}
+    public static void main(String[] args)
+    {
+    	int totalStake = initialStake;
+    	System.out.println("Welcome to Gambling Game Simulator program");
+    	int play = random.nextInt(2);
+    	switch(play)
+    	{
+    	case 0:
+    		  totalStake = totalStake - stakeBet;
+    		  System.out.println("Stake after losing: "+totalStake);
+    		  break;
+    	case 1:
+    		 totalStake = totalStake + stakeBet;
+    		  System.out.println("Stake after winning: "+totalStake);
+    		  break;
+    	}
+    	
+    }
 
 }
